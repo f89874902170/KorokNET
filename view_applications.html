@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="ru">
+<!-- Страница просмотра заявок - реализован слайдер, табллица, переходы, отправка отзыва -->
+<!-- Везде реализована адаптация текста под мобильную версию -->
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мои заявки</title>
+    <!-- Подключаем Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Дополнительные стили для слайдера, если нужно */
+        .carousel-item img {
+            max-height: 400px;
+            /* Ограничиваем высоту изображений в слайдере */
+            object-fit: cover;
+            /* Масштабируем изображения, чтобы они заполняли контейнер */
+        }
+
+        .carousel-caption {
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Полупрозрачный фон для текста */
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        @media (min-resolution: 1.5dppx) {
+            html {
+                font-size: 80%;
+                /* Уменьшаем на 20% сразу при зуме */
+            }
+        }
+
+        @media (min-resolution: 2.5dppx) {
+            html {
+                font-size: 50%;
+            }
+        }
+    </style>
+</head>
+
+<body class="bg-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="#">Портал «Корочки.есть»</a>
+            <div class="d-flex">
+                <!-- Кнопка Выход -->
+                <a href="index.html" class="btn btn-outline-light btn-sm">Выйти</a>
+            </div>
+        </div>
+    </nav>
+    <!-- НАЧАЛО СЛАЙДЕРА -->
+    <div id="carouselExampleCaptions" class="carousel slide mb-5" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="1.1.jpg" class="d-block w-100" alt="Изображение 1">
+                <div class="carousel-caption ">
+                    <h5>Добро пожаловать на портал!</h5>
+                    <p>Найдите свой идеальный курс.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="2.2.jpg" class="d-block w-100" alt="Изображение 2">
+                <div class="carousel-caption">
+                    <h5>Получите новые знания</h5>
+                    <p>Профессиональное развитие доступно каждому.</p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="3.3.jpg" class="d-block w-100" alt="Изображение 3">
+                <div class="carousel-caption ">
+                    <h5>Начните свой путь к успеху</h5>
+                    <p>Инвестируйте в свое будущее уже сегодня.</p>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!-- КОНЕЦ СЛАЙДЕРА -->
+
+    <div class="container mt-5">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>Мои заявки</h2>
+            <a href="apply.html" class="btn btn-primary">Создать новую заявку</a>
+        </div>
+
+        <!-- Таблица заявок -->
+        <div class="table-responsive">
+            <div class="card shadow-sm mb-5">
+                <div class="card-body">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>№</th>
+                                <th>Курс</th>
+                                <th>Дата начала</th>
+                                <th>Способ оплаты</th>
+                                <th>Статус</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Три тестовые заявки -->
+                            <tr>
+                                <td>1</td>
+                                <td>Основы Python</td>
+                                <td>2025-11-01</td>
+                                <td>Наличные</td>
+                                <td><span class="badge bg-success">Завершено</span></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Веб-дизайн</td>
+                                <td>2026-12-15</td>
+                                <td>Перевод</td>
+                                <td><span class="badge bg-primary">Идет обучение</span></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td>Базы данных</td>
+                                <td>2027-01-20</td>
+                                <td>Наличные</td>
+                                <td><span class="badge bg-secondary">Новая</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Блок отзыва -->
+        <div class="card shadow-sm">
+            <div class="card-body">
+                <h5>Оставить отзыв о качестве услуг</h5>
+                <form>
+                    <div class="mb-3">
+                        <textarea class="form-control" rows="3" placeholder="Ваш отзыв..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success">Отправить отзыв</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
