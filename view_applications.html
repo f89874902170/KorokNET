@@ -10,12 +10,16 @@
     <!-- Подключаем Bootstrap 5 -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        /* Дополнительные стили для слайдера, если нужно */
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        
         .carousel-item img {
-            max-height: 400px;
+            max-height: 300px;
             /* Ограничиваем высоту изображений в слайдере */
             object-fit: cover;
-            /* Масштабируем изображения, чтобы они заполняли контейнер */
         }
 
         .carousel-caption {
@@ -160,6 +164,11 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <footer class="bg-dark text-white text-center py-3 mt-auto">
+        <div class="container">
+            <p class="mb-0">&copy; 2026 Шварева Екатерина</p>
+        </div>
+    </footer>
 </body>
 
 </html>
